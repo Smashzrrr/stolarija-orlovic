@@ -111,57 +111,105 @@
     ]
   },
   "references": {
-    "badge": "REFERENCES",
+    "badge": "PROJECTS",
     "title": "Our Projects",
-    "subtitle": "See some of our successfully completed projects.",
+    "subtitle": "Browse some of our successfully completed projects across Dalmatia and Croatia.",
     "items": [
       {
-        "title": "PVC Windows Installation",
-        "description": "Prekrasna adaptacija obiteljske kuće uz vrhunsku izolaciju.",
-        "tag": "ALU/PVC",
+        "title": "ALU Folding Shutters on a Modern Villa",
+        "description": "Installation of decorative ALU folding shutters in wood decor on a modern villa with anthracite frames and glass balcony railings.",
+        "tag": "ALU Shutters",
         "image": "/images/projects/projekt-1.jpeg"
       },
       {
-        "title": "ALU Sliding Doors - Modern Villa",
-        "description": "Moderna izvedba stambenog objekta s velikim staklenim površinama.",
-        "tag": "Ugradnja",
+        "title": "PVC Sliding Wall Installation",
+        "description": "Installation of a PVC sliding wall and fixed windows on a new build — white profiles with energy-efficient double glazing and roller shutters.",
+        "tag": "Sliding Wall",
         "image": "/images/projects/projekt-2.jpeg"
       },
       {
-        "title": "ALU Folding Shutters on Coast",
-        "description": "Klizne stijene za maksimalnu iskoristivost prostora.",
-        "tag": "Klizne stijene",
+        "title": "PVC Roofing Windows",
+        "description": "Installation of PVC windows in a sloped attic roof with a view of the Dalmatian hinterland — wood-grain decor and triple glazing.",
+        "tag": "PVC Windows",
         "image": "/images/projects/projekt-3.jpeg"
       },
       {
-        "title": "Winter Garden with ALU Doors",
-        "description": "Elegantna ulazna vrata i visokokvalitetne grilje.",
-        "tag": "Ulazna vrata",
+        "title": "ALU Entrance Door with Hidden Leaf",
+        "description": "Modern anthracite ALU entrance door with LED canopy and roller shutter — elegant and secure entrance solution.",
+        "tag": "ALU Door",
         "image": "/images/projects/projekt-4.jpeg"
       },
       {
-        "title": "Mosquito Nets on Family House",
-        "description": "Kvalitetna izrada i dugotrajnost PVC stolarije.",
-        "tag": "PVC prozori",
+        "title": "PVC Joinery with ALU Shutters — Dalmatian House",
+        "description": "Complete installation of PVC windows with exterior green ALU shutters on a Mediterranean family house in traditional Dalmatian style.",
+        "tag": "PVC + Shutters",
         "image": "/images/projects/projekt-5.jpeg"
       },
       {
-        "title": "ALU Staircase Fence",
-        "description": "Zaštita s IDECO komarnicima i sjenilima po mjeri.",
-        "tag": "Zaštita",
+        "title": "Modern Villa with ALU Sliding Walls",
+        "description": "Complete fit-out of a luxury villa — ALU sliding walls, glass railings, folding shutters and entrance doors in a single modern design.",
+        "tag": "Full Package",
         "image": "/images/projects/projekt-6.jpeg"
       },
       {
-        "title": "Entrance Door with Hidden Leaf",
-        "description": "Sigurnost i estetski dojam s ALU ogradama.",
-        "tag": "Ograde",
+        "title": "ALU Shutters on a Coastal Apartment Building",
+        "description": "Installation of ALU shutters on all floors of an apartment building near the coast — anthracite color with matching frames.",
+        "tag": "ALU Shutters",
         "image": "/images/projects/projekt-7.jpeg"
       },
       {
-        "title": "Renovation with Luxury Framing",
-        "description": "Cjelokupno opremanje objekta najvišim standardima.",
-        "tag": "Komplet",
+        "title": "IDECO Plisse Mosquito Nets",
+        "description": "Installation of IDECO plisse mosquito nets on windows and doors — insect protection without compromising aesthetics.",
+        "tag": "Mosquito Nets",
         "image": "/images/projects/projekt-8.jpeg"
+      },
+      {
+        "title": "PVC Windows on a Residential Building",
+        "description": "Replacement of old joinery with new REHAU PVC windows — significant improvement in thermal and sound insulation.",
+        "tag": "PVC Windows",
+        "image": "/images/projects/projekt-9.jpeg"
+      },
+      {
+        "title": "PVC Balcony Doors with Shutters",
+        "description": "Installation of PVC balcony doors with integrated roller shutters — energy efficiency and sun protection in one.",
+        "tag": "PVC Doors",
+        "image": "/images/projects/projekt-10.jpeg"
+      },
+      {
+        "title": "ALU Fence on a Family House",
+        "description": "Installation of anthracite ALU fence panels on a yard — modern, durable, and corrosion resistant.",
+        "tag": "ALU Fence",
+        "image": "/images/projects/projekt-11.jpeg"
+      },
+      {
+        "title": "PVC Tilt-and-Turn Windows — Apartment",
+        "description": "Full window replacement in an apartment with white REHAU PVC tilt-and-turn windows and roller shutters.",
+        "tag": "PVC Windows",
+        "image": "/images/projects/projekt-12.jpeg"
+      },
+      {
+        "title": "ALU Lift-and-Slide Wall — Terrace",
+        "description": "Installation of a large-format ALU lift-and-slide wall connecting the living room to the terrace — unobstructed views and maximum daylight.",
+        "tag": "ALU Sliding Wall",
+        "image": "/images/projects/projekt-13.jpeg"
+      },
+      {
+        "title": "PVC Windows on Stone House",
+        "description": "Installation of PVC windows on a renovated stone house — golden oak decor that fits perfectly with the stone facade.",
+        "tag": "PVC Windows",
+        "image": "/images/projects/projekt-14.jpeg"
+      },
+      {
+        "title": "IDECO Plisse Mosquito Nets",
+        "description": "Installation of plisse mosquito nets on windows and doors — insect protection without disrupting aesthetics.",
+        "tag": "Mosquito Nets",
+        "image": "/images/projects/projekt-15.jpeg"
+      },
+      {
+        "title": "External Roller Shutters with Electric Drive",
+        "description": "Installation of PVC external roller shutters with electric drive and insulation — comfort at the touch of a button.",
+        "tag": "Roller Shutters",
+        "image": "/images/projects/projekt-16.jpeg"
       }
     ]
   },
@@ -181,21 +229,21 @@
     "items": [
       {
         "name": "Marko Horvat",
-        "role": "Private Investor, Zagreb",
+        "role": "Private Investor, Zadar",
         "initials": "MH",
         "text": "Complete joinery replacement in an 80m² apartment. Quality workmanship, fast installation, and cleanup after the job. Highly recommended!",
         "stars": 5
       },
       {
         "name": "Ana Kovačević",
-        "role": "Homeowner, Samobor",
+        "role": "Homeowner, Šibenik",
         "initials": "AK",
         "text": "The sliding walls are spectacular. From quote to installation, everything went smoothly and professionally.",
         "stars": 5
       },
       {
         "name": "Ivan Babić",
-        "role": "Project Manager, Zagreb",
+        "role": "Project Manager, Split",
         "initials": "IB",
         "text": "They did the joinery for our entire building. Deadlines met, top-quality work. We will definitely work together again.",
         "stars": 5
@@ -237,7 +285,7 @@
     "phone_label": "Phone",
     "phone_placeholder": "+385 ...",
     "location_label": "Location (city)",
-    "location_placeholder": "e.g. Zagreb, Samobor...",
+    "location_placeholder": "e.g. Zadar, Split, Šibenik...",
     "type_label": "Project Type",
     "type_placeholder": "e.g. window replacement, sliding walls...",
     "message_label": "Message",
@@ -259,9 +307,9 @@
     "working_hours": "Mon - Fri: 08:00 - 16:00"
   },
   "meta": {
-    "title": "Stolarija Orlović — ALU & PVC Joinery Zagreb | Windows, Doors, Sliding Walls",
-    "description": "Custom PVC and ALU joinery for your home in Zagreb. Energy-efficient windows, doors, and sliding walls. Free measurement, fast installation, 10-year warranty.",
-    "og_title": "Stolarija Orlović — ALU & PVC Joinery Zagreb",
+    "title": "Stolarija Orlović — ALU & PVC Joinery Dalmatia | Windows, Doors, Sliding Walls",
+    "description": "Custom PVC and ALU joinery for your home in Dalmatia. Energy-efficient windows, doors, and sliding walls. Free measurement, fast installation, 10-year warranty.",
+    "og_title": "Stolarija Orlović — ALU & PVC Joinery Dalmatia",
     "og_description": "Energy-efficient windows, doors, and sliding walls made to measure — Fast installation — 10-year warranty."
   },
   "gallery": {
