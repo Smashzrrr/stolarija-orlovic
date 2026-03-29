@@ -17,17 +17,13 @@ interface NavbarProps {
 }
 
 const HrFlag = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" className="w-5 h-5 rounded-[4px] object-cover flex-shrink-0">
-    <path fill="#f00010" d="M0 0h1200v200H0z"/><path fill="#fff" d="M0 200h1200v200H0z"/><path fill="#02418a" d="M0 400h1200v200H0z"/>
-    <g transform="translate(600,240) scale(4.5)">
-      <path fill="#02418a" d="M-15-18c-3-6-4-10-10-11 5-7 12-7 19-3l1 3h3l3-2 2-1c7-5 14-5 19 3-6 1-7 5-10 11 0 0 16 0 20-3h1c-2 25-10 39-29 49-21-9-27-24-29-49h1c3 3 20 3 20 3z"/>
-      <path fill="#fff" d="M-22-19c2 0 11 1 14 7h1c-3-6 7-6 10-2v-4h-5v5h-5v-5h-5v5h-5v-5h-5zm39-1l-5 5v-5h-5v5h-5v-5h-5v4c3-4 13-4 10 2h1c4-6 13-7 14-7zm4 4h-5v5h5zm-7 0h-5v5h5zm-7 0h-5v5h5zm-7 0h-5v5h5zm-7 0h-5v5h5zm0 7v5h-5v-5zm7 0v5h-5v-5zm7 0v5h-5v-5zm7 0v5h-5v-5zm-28 7h5v5h-5zm7 0h5v5h-5zm7 0h5v5h-5zm7 0h5v5h-5zm7 0h5v5h-5z"/>
-      <path fill="#f00010" d="M-28-19v5h5v-5zm7 0v5h5v-5zm7 0v5h5v-5zm7 0v5h5v-5zm7 0v5h5v-5zm7 0v5h5v-5zm0 7h-5v5h5zm-7 0h-5v5h5zm-7 0h-5v5h5zm-7 0h-5v5h5zm-7 0h-5v5h5zm-7 0h-5v5h5zm0 7v5h5v-5zm7 0v5h5v-5zm7 0v5h5v-5zm7 0v5h5v-5zm7 0v5h5v-5z"/>
-      <path fill="#03A9F4" d="M-11-20c2-3 5-4 11-4v1l-2 1-2 2c-3-5-6-4-7 0zM0-21c6 0 9 1 11 4c-1-4-4-5-7 0l-2-2-2-1v-1z"/>
-      <path fill="#ff0" d="M-6-19c2-3 8-1 5 3 0-2-3-2-5-3zm6-1c-2 1-5 1-5 3-3-4 3-6 5-3zM2-17v1h-3c5 2 6 5 2 7 0-4-3-6-5-5-2-1-5 1-5 5-4-2-3-5 2-7h-3v-1h9zM2-10h-2c-4 1-5-1-4-2l2 2 1-2c1 1 0 3-4 2-3 1-5 0-4-2l2 2 1-2c1 1 0 3-4 2v1l1-1c2 1 4 0 5-1l1 1c2 1 4 0 5-1l1 1v-1z"/>
-      <path fill="#000" d="M0-19v1c-1-1-2-1-2 0h-2c0-1-1-1-2 0v-1c1-1 2-1 2 0h2c0-1 1-1 2 0zm-4 4c2-2 5 2 4 4 2-3 2-6 0-6 2 2-1 4-4 2z"/>
-    </g>
-  </svg>
+  <Image 
+    src="/images/hr-flag.png"
+    alt="Hrvatski"
+    width={20}
+    height={15}
+    className="w-5 h-auto rounded-[2px] object-cover flex-shrink-0 border border-black/10"
+  />
 );
 
 const EnFlag = () => (
