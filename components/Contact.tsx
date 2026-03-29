@@ -20,7 +20,7 @@ export default function Contact({ dict, locale }: ContactProps) {
 
     const form = e.currentTarget;
     const formData = new FormData(form);
-    formData.append('access_key', '689f922a-f771-4fd6-84c3-de24cd29ef85');
+    formData.append('access_key', '3461e705-d267-441b-9929-e846d3ddccef');
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
