@@ -13,7 +13,7 @@ const galleryImages = [
   { src: '/images/projects/projekt-2.jpeg', title: 'PVC klizne stijene — novogradnja', titleEn: 'PVC sliding walls — new build' },
   { src: '/images/projects/projekt-3.jpeg', title: 'PVC prozori — potkrovlje', titleEn: 'PVC windows — attic' },
   { src: '/images/projects/projekt-4.jpeg', title: 'ALU ulazna vrata sa skrivenim krilom', titleEn: 'ALU entrance door with hidden leaf' },
-  { src: '/images/projects/projekt-5.jpeg', title: 'PVC stolarija s ALU grijljama', titleEn: 'PVC joinery with ALU shutters' },
+  { src: '/images/projects/projekt-5.jpeg', title: 'PVC stolarija s ALU griljama', titleEn: 'PVC joinery with ALU shutters' },
   { src: '/images/projects/projekt-6.jpeg', title: 'Moderna vila — kompletna stolarija', titleEn: 'Modern villa — full joinery' },
   { src: '/images/projects/projekt-7.jpeg', title: 'ALU grilje na kamenoj fasadi', titleEn: 'ALU shutters on stone facade' },
   { src: '/images/projects/projekt-8.jpeg', title: 'Komarnik na PVC prozoru', titleEn: 'Mosquito net on PVC window' },
@@ -93,7 +93,7 @@ export default function GalleryClient({ locale, dict }: { locale: Locale, dict: 
                 </h2>
                 <div className="space-y-4">
                   {(dict.gallery?.featured?.items || [
-                    "PVC Rehau stolarija s ALU harmo grijljama",
+                    "PVC Rehau stolarija s ALU harmo griljama",
                     "PVC unutarnje rolete s elektro pogonom",
                     "Antracit izvana, bijelo iznutra",
                     "Low-E trostruko staklo idealno za dalmatinsku klimu",
