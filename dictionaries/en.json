@@ -70,28 +70,28 @@
       {
         "title": "PVC Joinery",
         "description": "Premium energy efficiency for your home: Windows, solid entrance doors, balcony doors, lift-and-slide walls and sliding systems.",
-        "cta": "Learn more →",
+        "cta": "Learn more",
         "slug": "pvc-stolarija",
         "image": "/images/products/pvc/novo-pvc-prozor.jpg"
       },
       {
         "title": "ALU Joinery",
         "description": "Modern and durable solutions: Entrance doors with hidden leaf, aluminium walls and ALU folding shutters.",
-        "cta": "Learn more →",
+        "cta": "Learn more",
         "slug": "alu-stolarija",
         "image": "/images/products/alu/novo-alu-vrata.jpg"
       },
       {
         "title": "Mosquito Nets",
         "description": "Long-lasting insect protection: Plisse sliding, roller pull and classic mosquito nets.",
-        "cta": "Learn more →",
+        "cta": "Learn more",
         "slug": "komarnici",
         "image": "/images/products/komarnici/komarnici-5.jpg"
       },
       {
         "title": "ALU Fences",
         "description": "Aesthetically pleasing and extremely durable aluminium fences for yards, balconies and staircases.",
-        "cta": "Learn more →",
+        "cta": "Learn more",
         "slug": "alu-ograde",
         "image": "/images/products/ograde/ograde-5.jpeg"
       }
