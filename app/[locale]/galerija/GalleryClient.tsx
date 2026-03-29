@@ -4,32 +4,47 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, CheckCircle2, X } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import type { Locale } from '@/lib/i18n';
 import Footer from '@/components/Footer';
 
 const galleryImages = [
-  { src: '/images/projects/projekt-1.jpeg', title: 'ALU harmo grilje — moderna vila' },
-  { src: '/images/projects/projekt-2.jpeg', title: 'PVC klizne stijene — novogradnja' },
-  { src: '/images/projects/projekt-3.jpeg', title: 'PVC prozori — potkrovlje' },
-  { src: '/images/projects/projekt-4.jpeg', title: 'ALU ulazna vrata sa skrivenim krilom' },
-  { src: '/images/projects/projekt-5.jpeg', title: 'PVC stolarija s ALU grijljama' },
-  { src: '/images/projects/projekt-6.jpeg', title: 'Moderna vila — kompletna stolarija' },
-  { src: '/images/projects/projekt-7.jpeg', title: 'ALU grilje na kamenoj fasadi' },
-  { src: '/images/projects/projekt-8.jpeg', title: 'Komarnik na PVC prozoru' },
-  { src: '/images/projects/projekt-9.jpeg', title: 'ALU ograda za balkon' },
-  { src: '/images/projects/projekt-10.jpeg', title: 'Staklena ALU ograda' },
-  { src: '/images/projects/projekt-11.jpeg', title: 'ALU klizna stijena' },
-  { src: '/images/projects/projekt-12.jpeg', title: 'Staklena fasada' },
-  { src: '/images/projects/projekt-13.jpeg', title: 'PVC Rehau — antracit profili' },
-  { src: '/images/projects/projekt-14.jpeg', title: 'PVC prozori s roletama' },
-  { src: '/images/projects/projekt-15.jpeg', title: 'IDECO plise komarnici' },
-  { src: '/images/projects/projekt-16.jpeg', title: 'Vanjske rolete s elektro pogonom' },
+  { src: '/images/projects/projekt-1.jpeg', title: 'ALU harmo grilje — moderna vila', titleEn: 'ALU folding shutters — modern villa' },
+  { src: '/images/projects/projekt-2.jpeg', title: 'PVC klizne stijene — novogradnja', titleEn: 'PVC sliding walls — new build' },
+  { src: '/images/projects/projekt-3.jpeg', title: 'PVC prozori — potkrovlje', titleEn: 'PVC windows — attic' },
+  { src: '/images/projects/projekt-4.jpeg', title: 'ALU ulazna vrata sa skrivenim krilom', titleEn: 'ALU entrance door with hidden leaf' },
+  { src: '/images/projects/projekt-5.jpeg', title: 'PVC stolarija s ALU grijljama', titleEn: 'PVC joinery with ALU shutters' },
+  { src: '/images/projects/projekt-6.jpeg', title: 'Moderna vila — kompletna stolarija', titleEn: 'Modern villa — full joinery' },
+  { src: '/images/projects/projekt-7.jpeg', title: 'ALU grilje na kamenoj fasadi', titleEn: 'ALU shutters on stone facade' },
+  { src: '/images/projects/projekt-8.jpeg', title: 'Komarnik na PVC prozoru', titleEn: 'Mosquito net on PVC window' },
+  { src: '/images/projects/projekt-9.jpeg', title: 'ALU ograda za balkon', titleEn: 'ALU balcony railing' },
+  { src: '/images/projects/projekt-10.jpeg', title: 'Staklena ALU ograda', titleEn: 'Glass ALU railing' },
+  { src: '/images/projects/projekt-11.jpeg', title: 'ALU klizna stijena', titleEn: 'ALU sliding wall' },
+  { src: '/images/projects/projekt-12.jpeg', title: 'Staklena fasada', titleEn: 'Glass facade' },
+  { src: '/images/projects/projekt-13.jpeg', title: 'PVC Rehau — antracit profili', titleEn: 'PVC Rehau — anthracite profiles' },
+  { src: '/images/projects/projekt-14.jpeg', title: 'PVC prozori s roletama', titleEn: 'PVC windows with roller shutters' },
+  { src: '/images/projects/projekt-15.jpeg', title: 'IDECO plise komarnici', titleEn: 'IDECO plisse mosquito nets' },
+  { src: '/images/projects/projekt-16.jpeg', title: 'Vanjske rolete s elektro pogonom', titleEn: 'External roller shutters with electric drive' }
 ];
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export default function GalleryClient({ locale, dict }: { locale: Locale, dict: any }) {
-  const [selectedImage, setSelectedImage] = useState<{src: string, title: string} | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
+  const images = galleryImages.map(img => ({
+    src: img.src,
+    title: locale === 'en' ? img.titleEn : img.title
+  }));
+
+  const nextImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selectedIndex !== null) setSelectedIndex((selectedIndex + 1) % images.length);
+  };
+
+  const prevImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selectedIndex !== null) setSelectedIndex((selectedIndex - 1 + images.length) % images.length);
+  };
 
   return (
     <main className="min-h-screen bg-background pt-12 sm:pt-20">
@@ -108,7 +123,7 @@ export default function GalleryClient({ locale, dict }: { locale: Locale, dict: 
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
-            {galleryImages.map((img, i) => (
+            {images.map((img: { src: string, title: string }, i: number) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -119,7 +134,7 @@ export default function GalleryClient({ locale, dict }: { locale: Locale, dict: 
               >
                 <div 
                   className="relative aspect-[4/5] cursor-pointer"
-                  onClick={() => setSelectedImage(img)}
+                  onClick={() => setSelectedIndex(i)}
                 >
                   <Image 
                     src={img.src} 
@@ -141,21 +156,37 @@ export default function GalleryClient({ locale, dict }: { locale: Locale, dict: 
       <Footer dict={dict.footer} navDict={dict.nav} locale={locale as Locale} />
 
       <AnimatePresence>
-        {selectedImage && (
+        {selectedIndex !== null && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[100000] flex items-center justify-center bg-black/90 p-4 sm:p-8 backdrop-blur-sm"
-            onClick={() => setSelectedImage(null)}
+            onClick={() => setSelectedIndex(null)}
           >
             <button 
-              className="absolute top-6 right-6 text-white hover:text-cta transition-colors p-2 bg-black/50 rounded-full"
-              onClick={() => setSelectedImage(null)}
+              className="absolute top-6 right-6 text-white hover:text-cta transition-colors p-2 bg-black/50 rounded-full z-50"
+              onClick={() => setSelectedIndex(null)}
             >
               <X className="w-8 h-8" />
             </button>
+            
+            <button 
+              className="absolute left-4 sm:left-10 top-1/2 -translate-y-1/2 text-white hover:text-cta transition-colors p-3 bg-black/30 hover:bg-black/60 rounded-full z-50 group"
+              onClick={prevImage}
+            >
+              <ChevronLeft className="w-8 h-8 sm:w-10 sm:h-10 group-hover:-translate-x-1 transition-transform" />
+            </button>
+
+            <button 
+              className="absolute right-4 sm:right-10 top-1/2 -translate-y-1/2 text-white hover:text-cta transition-colors p-3 bg-black/30 hover:bg-black/60 rounded-full z-50 group"
+              onClick={nextImage}
+            >
+              <ChevronRight className="w-8 h-8 sm:w-10 sm:h-10 group-hover:translate-x-1 transition-transform" />
+            </button>
+
             <motion.div
+              key={selectedIndex}
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
@@ -165,15 +196,15 @@ export default function GalleryClient({ locale, dict }: { locale: Locale, dict: 
             >
               <div className="relative w-full h-full bg-transparent rounded-lg overflow-hidden flex items-center justify-center">
                 <Image 
-                  src={selectedImage.src}
-                  alt={selectedImage.title}
+                  src={images[selectedIndex].src}
+                  alt={images[selectedIndex].title}
                   fill
                   className="object-contain"
                   sizes="100vw"
                   priority
                 />
               </div>
-              <p className="text-white text-xl font-medium text-center">{selectedImage.title}</p>
+              <p className="text-white text-xl font-medium text-center">{images[selectedIndex].title}</p>
             </motion.div>
           </motion.div>
         )}

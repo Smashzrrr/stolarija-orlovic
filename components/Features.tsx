@@ -21,8 +21,9 @@ export default function Features({ dict }: FeaturesProps) {
             {dict.badge}
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-[family-name:var(--font-poppins)] tracking-tight max-w-3xl">
-             {/* Note: In expert.io "expert.io" is colored differently. We can color "Stolariju Orlović" */ }
-            Zašto odabrati <span className="text-[#84CC16]">Stolariju Orlović</span>?
+             {dict.title.split(/(Stolarij[au] Orlović\??)/).map((part: string, i: number) => 
+               part.includes('Stolarij') ? <span key={i} className="text-[#84CC16]">{part}</span> : <span key={i}>{part}</span>
+             )}
           </h2>
         </div>
 

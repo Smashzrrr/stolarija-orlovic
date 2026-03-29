@@ -13,29 +13,25 @@ interface HeroProps {
   locale: Locale;
 }
 
-const slides = [
-  {
-    image: '/images/projects/projekt-6.jpeg',
-    title: 'PVC Stolarija',
-    subtitle: 'Vrhunska zvučna i toplinska izolacija za vaš dom.',
-    slug: 'pvc-stolarija'
-  },
-  {
-    image: '/images/projects/projekt-1.jpeg',
-    title: 'ALU Klizne Stijene',
-    subtitle: 'Moderan dizajn koji savršeno spaja vaš interijer i eksterijer.',
-    slug: 'alu-stolarija'
-  },
-  {
-    image: '/images/projects/projekt-4.jpeg',
-    title: 'Ulazna Vrata',
-    subtitle: 'Sigurnost i estetika koja ostavlja nezaboravan prvi dojam.',
-    slug: 'alu-stolarija'
-  }
-];
+  // We'll use dict.hero.slides instead
+  // const slides = [...]
 
 export default function Hero({ dict, locale }: HeroProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  const images = [
+    '/images/projects/projekt-6.jpeg',
+    '/images/projects/projekt-1.jpeg',
+    '/images/projects/projekt-4.jpeg',
+  ];
+
+  const slugs = ['pvc-stolarija', 'alu-stolarija', 'alu-stolarija'];
+
+  const slides = dict.slides || [
+    { title: 'PVC Stolarija', subtitle: 'Vrhunska zvučna i toplinska izolacija za vaš dom.' },
+    { title: 'ALU Klizne Stijene', subtitle: 'Moderan dizajn koji savršeno spaja vaš interijer i eksterijer.' },
+    { title: 'Ulazna Vrata', subtitle: 'Sigurnost i estetika koja ostavlja nezaboravan prvi dojam.' }
+  ];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -61,7 +57,7 @@ export default function Hero({ dict, locale }: HeroProps) {
           className="absolute inset-0 z-0"
         >
           <Image 
-            src={slides[currentSlide].image} 
+            src={images[currentSlide]} 
             alt={slides[currentSlide].title}
             fill
             priority
@@ -91,10 +87,10 @@ export default function Hero({ dict, locale }: HeroProps) {
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
               <Link
-                href={`/${loc}/proizvodi/${slides[currentSlide].slug}`}
+                href={`/${loc}/proizvodi/${slugs[currentSlide]}`}
                 className="w-full sm:w-auto inline-flex justify-center items-center px-8 py-4 rounded-lg text-lg font-bold bg-[#84CC16] text-white hover:bg-[#65A30D] transition-all duration-300 shadow-xl shadow-[#84CC16]/20 hover:-translate-y-0.5"
               >
-                Saznaj više
+                {locale === 'hr' ? 'Saznaj više' : 'Learn more'}
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <a
@@ -126,7 +122,7 @@ export default function Hero({ dict, locale }: HeroProps) {
 
       {/* Dots Indicator */}
       <div className="absolute bottom-12 z-20 flex gap-4 left-1/2 -translate-x-1/2">
-        {slides.map((_, i) => (
+        {slides.map((_: any, i: number) => (
           <button 
             key={i} 
             onClick={() => setCurrentSlide(i)}

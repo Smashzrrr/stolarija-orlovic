@@ -7,7 +7,7 @@ import { X } from 'lucide-react';
 const WHATSAPP_NUMBER = '385957773505';
 const DEFAULT_MESSAGE = 'Pozdrav! Zanima me ponuda za PVC/ALU stolariju. Možete li mi poslati više informacija?';
 
-export default function WhatsAppButton() {
+export default function WhatsAppButton({ message }: { message?: string }) {
   const [showTooltip, setShowTooltip] = useState(false);
   const [dismissed, setDismissed] = useState(false);
 
@@ -44,7 +44,9 @@ export default function WhatsAppButton() {
               <X className="w-3 h-3 text-gray-500" />
             </button>
             <p className="text-sm text-gray-700 font-medium leading-snug">
-              👋 Trebate ponudu? Pišite nam na <span className="text-[#25D366] font-bold">WhatsApp</span> — odgovaramo brzo!
+              {message || (
+                <>👋 Trebate ponudu? Pišite nam na <span className="text-[#25D366] font-bold">WhatsApp</span> — odgovaramo brzo!</>
+              )}
             </p>
             {/* Arrow pointing to the button */}
             <div className="absolute -right-2 bottom-4 w-3 h-3 bg-white border-r border-b border-gray-100 rotate-[-45deg]" />

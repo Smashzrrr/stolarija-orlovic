@@ -102,9 +102,9 @@ export default async function LocaleLayout({
         className={`${poppins.variable} ${inter.variable} antialiased bg-background text-foreground`}
         suppressHydrationWarning
       >
-        <Navbar dict={dict.nav} locale={locale} />
+        <Navbar dict={dict.nav} productItems={dict.products.items} locale={locale} />
         {children}
-        <WhatsAppButton />
+        <WhatsAppButton message={dict.footer.whatsapp_btn} />
         <CookieConsent />
       </body>
     </html>

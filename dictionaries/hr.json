@@ -58,14 +58,14 @@
         "description": "Vrhunska energetska učinkovitost za vaš dom: Prozori, masivna ulazna vrata, balkonska vrata, podizno-klizne stijene i klizni sistemi s 2-4 staze.",
         "cta": "Saznaj više →",
         "slug": "pvc-stolarija",
-        "image": "/images/products/prozori/prozori-4.jpeg"
+        "image": "/images/products/pvc/novo-pvc-prozor.jpg"
       },
       {
         "title": "ALU stolarija",
         "description": "Moderna i trajna rješenja: Ulazna vrata sa skrivenim krilom, aluminijske stijene te ALU i harmo grilje.",
         "cta": "Saznaj više →",
         "slug": "alu-stolarija",
-        "image": "/images/products/alu/alu-2.jpg"
+        "image": "/images/products/alu/novo-alu-vrata.jpg"
       },
       {
         "title": "Komarnici",
@@ -296,7 +296,7 @@
     "error": "Greška pri slanju. Pokušajte ponovo.",
     "direct_title": "Ili nas kontaktirajte direktno",
     "direct_email": "orlovic13@gmail.com",
-    "direct_phone": "023 681 232 / 095 777 3505",
+    "direct_phone": "095 777 3505",
     "response_note": "Na svaki upit odgovaramo unutar 24 sata. Za hitne projekte — obično i brže.",
     "schedule_subject": "Upit za ponudu — Stolarija Orlović"
   },
@@ -304,7 +304,8 @@
     "copyright": "© 2026 Stolarija Orlović. Sva prava pridržana.",
     "email": "orlovic13@gmail.com",
     "address": "Budak 1a, Stankovci, Croatia",
-    "working_hours": "Pon - Pet: 08:00 - 16:00"
+    "working_hours": "Pon - Pet: 08:00 - 16:00",
+    "whatsapp_btn": "Pošaljite nam poruku"
   },
   "meta": {
     "title": "Stolarija Orlović — ALU i PVC Stolarija Dalmacija | Prozori, Vrata, Klizne Stijene",

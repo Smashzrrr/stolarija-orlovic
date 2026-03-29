@@ -20,7 +20,21 @@
     "stat2_value": "15+",
     "stat2_label": "years of experience",
     "stat3_value": "10",
-    "stat3_label": "years warranty"
+    "stat3_label": "years warranty",
+    "slides": [
+      {
+        "title": "PVC Joinery",
+        "subtitle": "Premium sound and thermal insulation for your home."
+      },
+      {
+        "title": "ALU Sliding Walls",
+        "subtitle": "Modern design seamlessly connecting your interior and exterior."
+      },
+      {
+        "title": "Entrance Doors",
+        "subtitle": "Security and aesthetic that leaves an unforgettable first impression."
+      }
+    ]
   },
   "features": {
     "badge": "WHY US",
@@ -58,14 +72,14 @@
         "description": "Premium energy efficiency for your home: Windows, solid entrance doors, balcony doors, lift-and-slide walls and sliding systems.",
         "cta": "Learn more →",
         "slug": "pvc-stolarija",
-        "image": "/images/products/prozori/prozori-4.jpeg"
+        "image": "/images/products/pvc/novo-pvc-prozor.jpg"
       },
       {
         "title": "ALU Joinery",
         "description": "Modern and durable solutions: Entrance doors with hidden leaf, aluminium walls and ALU folding shutters.",
         "cta": "Learn more →",
         "slug": "alu-stolarija",
-        "image": "/images/products/alu/alu-2.jpg"
+        "image": "/images/products/alu/novo-alu-vrata.jpg"
       },
       {
         "title": "Mosquito Nets",
@@ -296,7 +310,7 @@
     "error": "Error sending. Please try again.",
     "direct_title": "Or contact us directly",
     "direct_email": "orlovic13@gmail.com",
-    "direct_phone": "023 681 232 / 095 777 3505",
+    "direct_phone": "095 777 3505",
     "response_note": "We respond to every inquiry within 24 hours. For urgent projects — usually faster.",
     "schedule_subject": "Quote Request — Stolarija Orlović"
   },
@@ -304,7 +318,8 @@
     "copyright": "© 2026 Stolarija Orlović. All rights reserved.",
     "email": "orlovic13@gmail.com",
     "address": "Budak 1a, Stankovci, Croatia",
-    "working_hours": "Mon - Fri: 08:00 - 16:00"
+    "working_hours": "Mon - Fri: 08:00 - 16:00",
+    "whatsapp_btn": "Send us a message"
   },
   "meta": {
     "title": "Stolarija Orlović — ALU & PVC Joinery Dalmatia | Windows, Doors, Sliding Walls",

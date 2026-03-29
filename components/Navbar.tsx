@@ -12,6 +12,7 @@ import type { Locale } from '@/lib/i18n';
 /* eslint-disable @typescript-eslint/no-explicit-any */
 interface NavbarProps {
   dict: any;
+  productItems?: { title: string, slug: string }[];
   locale: Locale;
 }
 
@@ -89,7 +90,7 @@ const LanguageDropdown = ({ locale, mobileAlign = false }: { locale: Locale; mob
   );
 };
 
-export default function Navbar({ dict, locale }: NavbarProps) {
+export default function Navbar({ dict, productItems = [], locale }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -205,18 +206,18 @@ export default function Navbar({ dict, locale }: NavbarProps) {
                         <div className="absolute top-full left-1/2 -translate-x-1/2 w-48 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200">
                           <div className="h-2 w-full"></div>
                           <div className="bg-surface border border-border rounded-xl shadow-xl overflow-hidden py-2 flex flex-col">
-                            {[
-                              { name: 'PVC stolarija', slug: 'pvc-stolarija' },
-                              { name: 'ALU stolarija', slug: 'alu-stolarija' },
-                              { name: 'Komarnici', slug: 'komarnici' },
-                              { name: 'ALU ograde', slug: 'alu-ograde' }
-                            ].map(prod => (
+                            {(productItems.length > 0 ? productItems : [
+                              { title: 'PVC stolarija', slug: 'pvc-stolarija' },
+                              { title: 'ALU stolarija', slug: 'alu-stolarija' },
+                              { title: 'Komarnici', slug: 'komarnici' },
+                              { title: 'ALU ograde', slug: 'alu-ograde' }
+                            ]).map((prod: any) => (
                               <Link 
                                 key={prod.slug} 
                                 href={`/${locale}/proizvodi/${prod.slug}`}
                                 className="px-4 py-2.5 text-sm font-medium text-muted hover:text-foreground hover:bg-surface-light transition-colors"
                               >
-                                {prod.name}
+                                {prod.title}
                               </Link>
                             ))}
                           </div>
@@ -286,19 +287,19 @@ export default function Navbar({ dict, locale }: NavbarProps) {
                         <div className="py-2">
                           <div className="block py-2 text-base font-bold text-foreground">{link.label}</div>
                           <div className="pl-4 flex flex-col space-y-2 border-l-2 border-border mt-2">
-                             {[
-                              { name: 'PVC stolarija', slug: 'pvc-stolarija' },
-                              { name: 'ALU stolarija', slug: 'alu-stolarija' },
-                              { name: 'Komarnici', slug: 'komarnici' },
-                              { name: 'ALU ograde', slug: 'alu-ograde' }
-                            ].map(prod => (
+                             {(productItems.length > 0 ? productItems : [
+                              { title: 'PVC stolarija', slug: 'pvc-stolarija' },
+                              { title: 'ALU stolarija', slug: 'alu-stolarija' },
+                              { title: 'Komarnici', slug: 'komarnici' },
+                              { title: 'ALU ograde', slug: 'alu-ograde' }
+                            ]).map((prod: any) => (
                               <Link 
                                 key={prod.slug} 
                                 href={`/${locale}/proizvodi/${prod.slug}`}
                                 onClick={() => setIsOpen(false)}
                                 className="text-sm font-medium text-muted hover:text-foreground"
                               >
-                                {prod.name}
+                                {prod.title}
                               </Link>
                             ))}
                           </div>
