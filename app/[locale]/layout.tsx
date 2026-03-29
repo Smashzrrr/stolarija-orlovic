@@ -34,33 +34,39 @@ export async function generateMetadata({
   return {
     title: {
       default: dict.meta.title,
-      template: "%s | FRAVIZ",
+      template: "%s | Stolarija Orlović",
     },
     description: dict.meta.description,
     keywords: [
-      "AI automatizacija",
-      "AI automation",
-      "web scraping",
-      "konzalting",
-      "consulting",
-      "automatizacija procesa",
-      "process automation",
-      "Hrvatska",
-      "Croatia",
+      "PVC stolarija",
+      "ALU stolarija",
+      "prozori Dalmacija",
+      "PVC prozori Zadar",
+      "ALU vrata",
+      "klizne stijene",
+      "rolete",
+      "komarnici",
+      "stolarija Zadar",
+      "zamjena prozora",
+      "energetska obnova",
+      "Rehau profili",
+      "Stolarija Orlović",
+      "stolarija Šibenik",
+      "stolarija Split",
     ],
-    authors: [{ name: "Fraviz" }],
+    authors: [{ name: "Stolarija Orlović" }],
     alternates: {
-      canonical: `https://fraviz.vercel.app/${locale}`,
+      canonical: `https://stolarija-orlovic.hr/${locale}`,
       languages: {
-        hr: "https://fraviz.vercel.app/hr",
-        en: "https://fraviz.vercel.app/en",
+        hr: "https://stolarija-orlovic.hr/hr",
+        en: "https://stolarija-orlovic.hr/en",
       },
     },
     openGraph: {
       title: dict.meta.og_title,
       description: dict.meta.og_description,
-      url: `https://fraviz.vercel.app/${locale}`,
-      siteName: "FRAVIZ",
+      url: `https://stolarija-orlovic.hr/${locale}`,
+      siteName: "Stolarija Orlović",
       locale: locale === "hr" ? "hr_HR" : "en_US",
       type: "website",
     },
@@ -76,6 +82,9 @@ export async function generateMetadata({
   };
 }
 
+import TopBar from "@/components/TopBar";
+import WhatsAppButton from "@/components/WhatsAppButton";
+
 export default async function LocaleLayout({
   children,
   params,
@@ -88,12 +97,14 @@ export default async function LocaleLayout({
   const dict = await getDictionary(locale);
 
   return (
-    <html lang={locale} className="dark">
+    <html lang={locale} suppressHydrationWarning>
       <body
         className={`${poppins.variable} ${inter.variable} antialiased bg-background text-foreground`}
+        suppressHydrationWarning
       >
         <Navbar dict={dict.nav} locale={locale} />
         {children}
+        <WhatsAppButton />
         <CookieConsent />
       </body>
     </html>

@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://fraviz.com/sitemap.xml',
+    sitemap: 'https://stolarija-orlovic.hr/sitemap.xml',
   };
 }

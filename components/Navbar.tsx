@@ -2,8 +2,9 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, MapPin, Clock, Phone, Mail, Facebook } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NeonButton } from '@/components/ui/neon-button';
 import type { Locale } from '@/lib/i18n';
@@ -57,7 +58,7 @@ const LanguageDropdown = ({ locale, mobileAlign = false }: { locale: Locale; mob
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             transition={{ duration: 0.15 }}
-            className={`absolute top-full mt-2 w-36 bg-[#0a0a0f] border border-border rounded-xl shadow-2xl overflow-hidden py-1 z-50 ${mobileAlign ? 'right-0' : 'left-0 text-left'}`}
+            className={`absolute top-full mt-2 w-36 bg-surface border border-border rounded-xl shadow-lg overflow-hidden py-1 z-50 ${mobileAlign ? 'right-0' : 'left-0 text-left'}`}
           >
             <Link
               href="/hr"
@@ -103,10 +104,10 @@ export default function Navbar({ dict, locale }: NavbarProps) {
   }, [isOpen]);
 
   const navLinks = [
-    { label: dict.about, href: '#about-fraviz' },
-    { label: dict.services, href: '#services' },
-    { label: dict.results, href: '#results' },
-    { label: dict.blog, href: `/${locale}/blog` },
+    { label: dict.about, href: `/${locale}/o-nama` },
+    { label: dict.products, href: '#products' },
+    { label: dict.references, href: '#references' },
+    { label: locale === 'hr' ? 'Galerija' : 'Gallery', href: `/${locale}/galerija` },
     { label: dict.contact, href: '#contact' },
   ];
 
@@ -115,120 +116,208 @@ export default function Navbar({ dict, locale }: NavbarProps) {
       e.preventDefault();
       const id = href.replace('#', '');
       const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        router.push(`/${locale}${href}`);
+      }
       setIsOpen(false);
     }
   };
 
   return (
     <>
-      <header
-        style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 9999 }}
-        className={`
-          transition-all duration-300
-          ${scrolled
-            ? 'bg-[#0a0a0f]/90 backdrop-blur-xl border-b border-border shadow-lg shadow-black/20'
-            : 'bg-background/60 backdrop-blur-lg border-b border-white/5'
-          }
-        `}
-      >
-        <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-10">
-          <div className="flex items-center justify-between h-16">
-
-            {/* Logo */}
-            <a 
-              href={`/${locale}`}
-              onClick={(e) => {
-                e.preventDefault();
-                const path = window.location.pathname;
-                if (path === `/${locale}` || path === `/${locale}/` || path === '/') {
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                  window.history.pushState(null, '', `/${locale}`);
-                } else {
-                  router.push(`/${locale}`);
-                }
-              }}
-              className="flex-shrink-0 cursor-pointer"
-            >
-              <span className="text-xl font-black tracking-tight font-[family-name:var(--font-poppins)] text-cta">
-                FRAVIZ
-              </span>
+      <header className="fixed top-0 left-0 right-0 z-[9999]">
+        {/* TopBar Integrated */}
+        <div className="hidden lg:flex w-full bg-[#84CC16] text-white text-[11px] xl:text-[13px] font-medium py-1.5 px-4 sm:px-6 lg:px-10 justify-between items-center relative z-10">
+          <div className="flex items-center gap-6">
+            <div className="flex items-center gap-2">
+              <MapPin fill="white" className="w-3.5 h-3.5 text-[#84CC16]" />
+              <span>Budak 1a, Stankovci, Croatia</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Clock className="w-3.5 h-3.5" />
+              <span>Pon-Pet: 08:00-16:00</span>
+            </div>
+          </div>
+          <div className="flex items-center gap-6">
+            <a href="tel:+38523681232" className="flex items-center gap-2 hover:text-black transition-colors">
+              <Phone fill="white" className="w-3.5 h-3.5 text-[#84CC16]" />
+              <span>023 681 232</span>
             </a>
-
-            {/* Desktop Nav — centered */}
-            <nav className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  onClick={(e) => scrollToSection(e, link.href)}
-                  className="text-sm font-medium text-muted hover:text-foreground transition-colors"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </nav>
-
-            {/* Desktop Right — Language Switcher + CTA */}
-            <div className="hidden md:flex items-center gap-4">
-              <LanguageDropdown locale={locale} mobileAlign={false} />
-              <Link href="#contact" onClick={(e) => scrollToSection(e, '#contact')}>
-                <NeonButton size="sm">{dict.cta}</NeonButton>
-              </Link>
-            </div>
-
-            {/* Mobile: Language + Hamburger */}
-            <div className="flex md:hidden items-center gap-3">
-              <LanguageDropdown locale={locale} mobileAlign={true} />
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="text-foreground p-1"
-                aria-label="Toggle menu"
-              >
-                {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </button>
-            </div>
+            <a href="mailto:orlovic13@gmail.com" className="flex items-center gap-2 hover:text-black transition-colors">
+              <Mail className="w-3.5 h-3.5" />
+              <span>orlovic13@gmail.com</span>
+            </a>
+            <a href="https://web.facebook.com/p/ALU-i-PVC-stolarija-Orlovi%C4%87-100063548771189/" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">
+              <Facebook className="w-4 h-4" />
+            </a>
           </div>
         </div>
 
-        {/* Mobile dropdown menu */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              ref={menuRef}
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.25, ease: 'easeInOut' }}
-              className="md:hidden overflow-hidden border-t border-border bg-[#0a0a0f]/95 backdrop-blur-xl"
-            >
-              <nav className="px-4 py-6 space-y-1">
-                {navLinks.map((link, i) => (
-                  <motion.a
-                    key={link.label}
-                    href={link.href}
-                    onClick={(e) => scrollToSection(e, link.href)}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.05 }}
-                    className="block py-3 text-base font-medium text-muted hover:text-foreground transition-colors"
-                  >
-                    {link.label}
-                  </motion.a>
-                ))}
-                <div className="pt-4">
-                  <Link href="#contact" onClick={(e) => scrollToSection(e, '#contact')}>
-                    <NeonButton className="w-full">{dict.cta}</NeonButton>
-                  </Link>
-                </div>
+        {/* Navbar Body */}
+        <div 
+          className={`
+            transition-all duration-300 w-full
+            ${scrolled
+              ? 'bg-surface/95 backdrop-blur-xl border-b border-border shadow-md'
+              : 'bg-background/80 backdrop-blur-lg border-b border-border/20'
+            }
+          `}
+        >
+          <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-10">
+            <div className="flex items-center justify-between h-16 sm:h-20">
+
+              {/* Logo */}
+              <Link 
+                href={`/${locale}`}
+                className="flex-shrink-0 cursor-pointer flex items-center gap-2"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              >
+                <Image 
+                  src="/images/logo-nobg.png" 
+                  alt="Stolarija Orlović" 
+                  width={180} 
+                  height={45} 
+                  className="object-contain"
+                  priority
+                />
+              </Link>
+
+              {/* Desktop Nav */}
+              <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+                {navLinks.map((link) => {
+                  if (link.label === dict.products) {
+                    return (
+                      <div key={link.label} className="relative group">
+                        <button className="flex items-center gap-1 text-sm font-semibold text-foreground hover:text-cta transition-colors py-4">
+                          {link.label}
+                          <ChevronDown className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" />
+                        </button>
+                        <div className="absolute top-full left-1/2 -translate-x-1/2 w-48 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200">
+                          <div className="h-2 w-full"></div>
+                          <div className="bg-surface border border-border rounded-xl shadow-xl overflow-hidden py-2 flex flex-col">
+                            {[
+                              { name: 'PVC Stolarija', slug: 'pvc-stolarija' },
+                              { name: 'ALU Stolarija', slug: 'alu-stolarija' },
+                              { name: 'Komarnici', slug: 'komarnici' },
+                              { name: 'ALU Ograde', slug: 'alu-ograde' }
+                            ].map(prod => (
+                              <Link 
+                                key={prod.slug} 
+                                href={`/${locale}/proizvodi/${prod.slug}`}
+                                className="px-4 py-2.5 text-sm font-medium text-muted hover:text-foreground hover:bg-surface-light transition-colors"
+                              >
+                                {prod.name}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  }
+
+                  const isExternal = !link.href.startsWith('#');
+
+                  return isExternal ? (
+                    <Link
+                      key={link.label}
+                      href={link.href}
+                      className="text-sm font-semibold tracking-wide text-foreground hover:text-cta transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      onClick={(e) => scrollToSection(e, link.href)}
+                      className="text-sm font-semibold tracking-wide text-foreground hover:text-cta transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  );
+                })}
               </nav>
-            </motion.div>
-          )}
-        </AnimatePresence>
+
+              {/* Desktop Right */}
+              <div className="hidden md:flex items-center gap-4">
+                <LanguageDropdown locale={locale} />
+                <Link href="#contact" onClick={(e) => scrollToSection(e, '#contact')}>
+                  <NeonButton size="sm" variant="solid" className="shadow-[0_0_15px_rgba(132,204,22,0.3)]">{dict.cta}</NeonButton>
+                </Link>
+              </div>
+
+              {/* Mobile hamburger */}
+              <div className="flex md:hidden items-center gap-3">
+                <LanguageDropdown locale={locale} mobileAlign={true} />
+                <button
+                  onClick={() => setIsOpen(!isOpen)}
+                  className="text-foreground p-1"
+                >
+                  {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile menu */}
+          <AnimatePresence>
+            {isOpen && (
+              <motion.div
+                ref={menuRef}
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: 'auto', opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                className="md:hidden overflow-hidden border-t border-border bg-surface/95 backdrop-blur-xl"
+              >
+                <nav className="px-4 py-6 space-y-1">
+                  {navLinks.map((link) => (
+                    <div key={link.label}>
+                      {link.label === dict.products ? (
+                        <div className="py-2">
+                          <div className="block py-2 text-base font-bold text-foreground">{link.label}</div>
+                          <div className="pl-4 flex flex-col space-y-2 border-l-2 border-border mt-2">
+                             {[
+                              { name: 'PVC Stolarija', slug: 'pvc-stolarija' },
+                              { name: 'ALU Stolarija', slug: 'alu-stolarija' },
+                              { name: 'Komarnici', slug: 'komarnici' },
+                              { name: 'ALU Ograde', slug: 'alu-ograde' }
+                            ].map(prod => (
+                              <Link 
+                                key={prod.slug} 
+                                href={`/${locale}/proizvodi/${prod.slug}`}
+                                onClick={() => setIsOpen(false)}
+                                className="text-sm font-medium text-muted hover:text-foreground"
+                              >
+                                {prod.name}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      ) : (
+                        <Link
+                          href={link.href}
+                          onClick={(e) => {
+                            if (link.href.startsWith('#')) scrollToSection(e as any, link.href);
+                            else setIsOpen(false);
+                          }}
+                          className="block py-3 text-base font-semibold text-foreground hover:text-cta"
+                        >
+                          {link.label}
+                        </Link>
+                      )}
+                    </div>
+                  ))}
+                </nav>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </header>
 
-      {/* Spacer for fixed navbar */}
-      <div className="h-16" />
+      {/* Unified Spacer */}
+      <div className="h-[98px] lg:h-[120px]" />
     </>
   );
 }

@@ -1,9 +1,9 @@
 import Hero from '@/components/Hero';
-import AboutFraviz from '@/components/AboutFraviz';
-import About from '@/components/About';
-import Services from '@/components/Services';
-import CaseStudies from '@/components/CaseStudies';
-import Portfolio from '@/components/Portfolio';
+import Features from '@/components/Features';
+import Products from '@/components/Products';
+import Process from '@/components/Process';
+import References from '@/components/References';
+import Brands from '@/components/Brands';
 import SocialProof from '@/components/SocialProof';
 import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
@@ -22,12 +22,12 @@ export default async function Home({
   return (
     <>
       <main>
-        <Hero dict={dict.hero} />
-        <AboutFraviz dict={dict.aboutFraviz} />
-        <About dict={dict.about} />
-        <Services dict={dict.services} />
-        <CaseStudies dict={dict.caseStudies} />
-        <Portfolio dict={dict.portfolio} />
+        <Hero dict={dict.hero} locale={locale} />
+        <Features dict={dict.features} />
+        <Products dict={dict.products} />
+        <Process dict={dict.process} />
+        <References dict={dict.references} />
+        <Brands dict={dict.brands} />
         <SocialProof dict={dict.testimonials} />
         <FAQ dict={dict.faq} />
         <Contact dict={dict.contact} locale={locale} />

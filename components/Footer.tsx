@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { Linkedin, Mail } from 'lucide-react';
+import Image from 'next/image';
+import { Mail, Phone, MapPin, Facebook } from 'lucide-react';
 import type { Locale } from '@/lib/i18n';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -11,10 +12,9 @@ interface FooterProps {
 
 export default function Footer({ dict, navDict, locale }: FooterProps) {
   const navLinks = [
-    { label: navDict.about, href: '#about-fraviz' },
-    { label: navDict.services, href: '#services' },
-    { label: navDict.results, href: '#results' },
-    { label: navDict.blog, href: `/${locale}/blog` },
+    { label: navDict.about, href: `/${locale}/o-nama` },
+    { label: navDict.products, href: '#products' },
+    { label: navDict.references, href: '#references' },
     { label: navDict.contact, href: '#contact' },
   ];
 
@@ -24,10 +24,19 @@ export default function Footer({ dict, navDict, locale }: FooterProps) {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo + copyright */}
           <div className="flex flex-col items-center md:items-start gap-2">
-            <Link href={`/${locale}`} className="text-xl font-black tracking-tight font-[family-name:var(--font-poppins)] text-cta">
-              FRAVIZ
+            <Link href={`/${locale}`} className="flex items-center gap-2">
+              <Image 
+                src="/images/logo-nobg.png" 
+                alt="Stolarija Orlović" 
+                width={140} 
+                height={35} 
+                className="object-contain"
+              />
             </Link>
             <p className="text-xs text-muted">{dict.copyright}</p>
+            {dict.working_hours && (
+              <p className="text-xs text-muted">{dict.working_hours}</p>
+            )}
           </div>
 
           {/* Nav links */}
@@ -43,7 +52,7 @@ export default function Footer({ dict, navDict, locale }: FooterProps) {
             ))}
           </nav>
 
-          {/* Social + email */}
+          {/* Contact info */}
           <div className="flex items-center gap-4">
             <a
               href={`mailto:${dict.email}`}
@@ -53,14 +62,27 @@ export default function Footer({ dict, navDict, locale }: FooterProps) {
               <Mail className="w-4 h-4" />
             </a>
             <a
-              href="https://www.linkedin.com/company/fraviz"
+              href="tel:+38523681232"
+              className="w-9 h-9 rounded-lg border border-border flex items-center justify-center text-muted hover:text-cta hover:border-cta/30 transition-colors"
+              aria-label="Phone"
+            >
+              <Phone className="w-4 h-4" />
+            </a>
+            <a
+              href="https://web.facebook.com/p/ALU-i-PVC-stolarija-Orlovi%C4%87-100063548771189/?locale=hr_HR&_rdc=1&_rdr"
               target="_blank"
               rel="noopener noreferrer"
               className="w-9 h-9 rounded-lg border border-border flex items-center justify-center text-muted hover:text-cta hover:border-cta/30 transition-colors"
-              aria-label="LinkedIn"
+              aria-label="Facebook"
             >
-              <Linkedin className="w-4 h-4" />
+              <Facebook className="w-4 h-4" />
             </a>
+            <div
+              className="w-9 h-9 rounded-lg border border-border flex items-center justify-center text-muted"
+              aria-label="Location"
+            >
+              <MapPin className="w-4 h-4" />
+            </div>
           </div>
         </div>
       </div>
