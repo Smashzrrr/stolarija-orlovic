@@ -16,8 +16,16 @@ interface NavbarProps {
 }
 
 const HrFlag = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" className="w-5 h-5 rounded-[4px] object-cover flex-shrink-0">
-    <path fill="#02418a" d="M0 320h640v160H0z"/><path fill="#fff" d="M0 160h640v160H0z"/><path fill="#f00010" d="M0 0h640v160H0z"/><g transform="scale(3.11666) translate(40.24)"><path fill="#03A9F4" d="M57.9 33.7c1.4.3 2 1.9 1 3h-2.3v30.4s-3.7 9.8-15.4 9.8c-11.7 0-15.4-9.8-15.4-9.8V36.7H23.5c-1-1.1-.4-2.7 1-3H58z"/><path fill="#fff" d="M30 45.4h4.4v4.4H30zm8.7 0h4.3v4.4h-4.3zm8.7 0h4.4v4.4h-4.4zm-17.4 8.6h4.4v4.3H30zm8.7 0h4.3v4.3h-4.3zm8.7 0h4.4v4.3h-4.4zm-13 8.6h4.3v4.4h-4.3zm8.7 0h4.3v4.4h-4.3z"/><path fill="#f00010" d="M34.4 36.7h4.3v4.4h-4.3zm8.7 0h4.3v4.4h-4.3zm-13 8.7h4.3v4.4h-4.3zm8.7 0h4.3v4.4h-4.3zm8.7 0h4.4v4.4h-4.4zm-21.7 8.6h4.4v4.3H26zm8.6 0h4.4v4.3h-4.4zm8.7 0h4.3v4.3h-4.3zm8.7 0h4.4v4.3h-4.4zm-21.7 8.6h4.4v4.4H26zm8.6 0h4.4v4.4h-4.4zm8.7 0h4.3v4.4h-4.3zm-4.4 8.7h4.3v4.3h-4.3zm-8.6 0h4.4v4.3h-4.4z"/><path fill="#02418a" d="M26 31.8h5.3v3c-1 3.5-3.6 4.7-6.5 4.8 2.2-3 2.9-6.3 1.2-7.8zM31.3 31.8h5.4v3c-1 3.5-3.7 4.7-6.6 4.8 2.3-3 3-6.3 1.2-7.8z"/><path fill="#03A9F4" d="M36.7 31.8h5.4v3c-1 3.5-3.7 4.7-6.6 4.8 2.3-3 3-6.3 1.2-7.8z"/><path fill="#02418a" d="M42 31.8h5.5v3c-1 3.5-3.7 4.7-6.6 4.8 2.3-3 3-6.3 1.1-7.8zM47.5 31.8H53v3c-1 3.5-3.8 4.7-6.6 4.8 2.3-3 3-6.3 1.1-7.8z"/><path fill="#f00010" d="M49 32.8s-.3.7-.8 1c.2-.5 0-1-.1-1.2.4 0 .9.2.9.2zM29 33.5s-.8-2-1.8.2L28 35l1-1.5zM33 34.6l-1 1-1-1v1l1-1z"/><path fill="#ff0" d="M34 32.8l2-1-1 3z"/><path fill="#000" d="M38.8 33c-.1.3-.4 1-.3 1v.7c-1 0-.9-.7-.9-.7zM43 33c.4 1 1.7 1.8 1.7 1.8V35c-.8 0-1.7-.8-1.7-.8z"/><path fill="#ff0" d="M44 33s.6.5 1 1v.5s-.3-.5-1-1zM48.2 32.8s0 1-1 1c0 0 .7.3 1 1v-2z"/></g>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" className="w-5 h-5 rounded-[4px] object-cover flex-shrink-0">
+    <path fill="#f00010" d="M0 0h1200v200H0z"/><path fill="#fff" d="M0 200h1200v200H0z"/><path fill="#02418a" d="M0 400h1200v200H0z"/>
+    <g transform="translate(600,240) scale(4.5)">
+      <path fill="#02418a" d="M-15-18c-3-6-4-10-10-11 5-7 12-7 19-3l1 3h3l3-2 2-1c7-5 14-5 19 3-6 1-7 5-10 11 0 0 16 0 20-3h1c-2 25-10 39-29 49-21-9-27-24-29-49h1c3 3 20 3 20 3z"/>
+      <path fill="#fff" d="M-22-19c2 0 11 1 14 7h1c-3-6 7-6 10-2v-4h-5v5h-5v-5h-5v5h-5v-5h-5zm39-1l-5 5v-5h-5v5h-5v-5h-5v4c3-4 13-4 10 2h1c4-6 13-7 14-7zm4 4h-5v5h5zm-7 0h-5v5h5zm-7 0h-5v5h5zm-7 0h-5v5h5zm-7 0h-5v5h5zm0 7v5h-5v-5zm7 0v5h-5v-5zm7 0v5h-5v-5zm7 0v5h-5v-5zm-28 7h5v5h-5zm7 0h5v5h-5zm7 0h5v5h-5zm7 0h5v5h-5zm7 0h5v5h-5z"/>
+      <path fill="#f00010" d="M-28-19v5h5v-5zm7 0v5h5v-5zm7 0v5h5v-5zm7 0v5h5v-5zm7 0v5h5v-5zm7 0v5h5v-5zm0 7h-5v5h5zm-7 0h-5v5h5zm-7 0h-5v5h5zm-7 0h-5v5h5zm-7 0h-5v5h5zm-7 0h-5v5h5zm0 7v5h5v-5zm7 0v5h5v-5zm7 0v5h5v-5zm7 0v5h5v-5zm7 0v5h5v-5z"/>
+      <path fill="#03A9F4" d="M-11-20c2-3 5-4 11-4v1l-2 1-2 2c-3-5-6-4-7 0zM0-21c6 0 9 1 11 4c-1-4-4-5-7 0l-2-2-2-1v-1z"/>
+      <path fill="#ff0" d="M-6-19c2-3 8-1 5 3 0-2-3-2-5-3zm6-1c-2 1-5 1-5 3-3-4 3-6 5-3zM2-17v1h-3c5 2 6 5 2 7 0-4-3-6-5-5-2-1-5 1-5 5-4-2-3-5 2-7h-3v-1h9zM2-10h-2c-4 1-5-1-4-2l2 2 1-2c1 1 0 3-4 2-3 1-5 0-4-2l2 2 1-2c1 1 0 3-4 2v1l1-1c2 1 4 0 5-1l1 1c2 1 4 0 5-1l1 1v-1z"/>
+      <path fill="#000" d="M0-19v1c-1-1-2-1-2 0h-2c0-1-1-1-2 0v-1c1-1 2-1 2 0h2c0-1 1-1 2 0zm-4 4c2-2 5 2 4 4 2-3 2-6 0-6 2 2-1 4-4 2z"/>
+    </g>
   </svg>
 );
 
@@ -141,9 +149,9 @@ export default function Navbar({ dict, locale }: NavbarProps) {
             </div>
           </div>
           <div className="flex items-center gap-6">
-            <a href="tel:+38523681232" className="flex items-center gap-2 hover:text-black transition-colors">
+            <a href="tel:+385957773505" className="flex items-center gap-2 hover:text-black transition-colors">
               <Phone fill="white" className="w-3.5 h-3.5 text-[#84CC16]" />
-              <span>023 681 232</span>
+              <span>095 777 3505</span>
             </a>
             <a href="mailto:orlovic13@gmail.com" className="flex items-center gap-2 hover:text-black transition-colors">
               <Mail className="w-3.5 h-3.5" />
@@ -190,7 +198,7 @@ export default function Navbar({ dict, locale }: NavbarProps) {
                   if (link.label === dict.products) {
                     return (
                       <div key={link.label} className="relative group">
-                        <button className="flex items-center gap-1 text-sm font-semibold text-foreground hover:text-cta transition-colors py-4">
+                        <button className="flex items-center gap-1 text-sm font-semibold capitalize text-foreground hover:text-cta transition-colors py-4">
                           {link.label}
                           <ChevronDown className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" />
                         </button>
@@ -198,10 +206,10 @@ export default function Navbar({ dict, locale }: NavbarProps) {
                           <div className="h-2 w-full"></div>
                           <div className="bg-surface border border-border rounded-xl shadow-xl overflow-hidden py-2 flex flex-col">
                             {[
-                              { name: 'PVC Stolarija', slug: 'pvc-stolarija' },
-                              { name: 'ALU Stolarija', slug: 'alu-stolarija' },
+                              { name: 'PVC stolarija', slug: 'pvc-stolarija' },
+                              { name: 'ALU stolarija', slug: 'alu-stolarija' },
                               { name: 'Komarnici', slug: 'komarnici' },
-                              { name: 'ALU Ograde', slug: 'alu-ograde' }
+                              { name: 'ALU ograde', slug: 'alu-ograde' }
                             ].map(prod => (
                               <Link 
                                 key={prod.slug} 
@@ -223,7 +231,7 @@ export default function Navbar({ dict, locale }: NavbarProps) {
                     <Link
                       key={link.label}
                       href={link.href}
-                      className="text-sm font-semibold tracking-wide text-foreground hover:text-cta transition-colors"
+                      className="text-sm font-semibold tracking-wide capitalize text-foreground hover:text-cta transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -232,7 +240,7 @@ export default function Navbar({ dict, locale }: NavbarProps) {
                       key={link.label}
                       href={link.href}
                       onClick={(e) => scrollToSection(e, link.href)}
-                      className="text-sm font-semibold tracking-wide text-foreground hover:text-cta transition-colors"
+                      className="text-sm font-semibold tracking-wide capitalize text-foreground hover:text-cta transition-colors"
                     >
                       {link.label}
                     </a>
@@ -279,10 +287,10 @@ export default function Navbar({ dict, locale }: NavbarProps) {
                           <div className="block py-2 text-base font-bold text-foreground">{link.label}</div>
                           <div className="pl-4 flex flex-col space-y-2 border-l-2 border-border mt-2">
                              {[
-                              { name: 'PVC Stolarija', slug: 'pvc-stolarija' },
-                              { name: 'ALU Stolarija', slug: 'alu-stolarija' },
+                              { name: 'PVC stolarija', slug: 'pvc-stolarija' },
+                              { name: 'ALU stolarija', slug: 'alu-stolarija' },
                               { name: 'Komarnici', slug: 'komarnici' },
-                              { name: 'ALU Ograde', slug: 'alu-ograde' }
+                              { name: 'ALU ograde', slug: 'alu-ograde' }
                             ].map(prod => (
                               <Link 
                                 key={prod.slug} 
@@ -302,7 +310,7 @@ export default function Navbar({ dict, locale }: NavbarProps) {
                             if (link.href.startsWith('#')) scrollToSection(e as any, link.href);
                             else setIsOpen(false);
                           }}
-                          className="block py-3 text-base font-semibold text-foreground hover:text-cta"
+                          className="block py-3 text-base font-semibold capitalize text-foreground hover:text-cta"
                         >
                           {link.label}
                         </Link>

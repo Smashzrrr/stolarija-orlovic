@@ -1,10 +1,10 @@
 'use client';
 
-import { use } from 'react';
-import { motion } from 'framer-motion';
+import { use, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, X } from 'lucide-react';
 import { getDictionary, type Locale } from '@/lib/i18n';
 import Footer from '@/components/Footer';
 
@@ -30,6 +30,8 @@ const galleryImages = [
 export default function GalleryPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = use(params);
   const dict = use(getDictionary(locale as Locale));
+  
+  const [selectedImage, setSelectedImage] = useState<{src: string, title: string} | null>(null);
 
   return (
     <main className="min-h-screen bg-background pt-12 sm:pt-20">
@@ -117,7 +119,10 @@ export default function GalleryPage({ params }: { params: Promise<{ locale: stri
                 transition={{ duration: 0.4, delay: i * 0.05 }}
                 className="relative break-inside-avoid rounded-2xl overflow-hidden border border-border group"
               >
-                <div className="relative aspect-[4/5]">
+                <div 
+                  className="relative aspect-[4/5] cursor-pointer"
+                  onClick={() => setSelectedImage(img)}
+                >
                   <Image 
                     src={img.src} 
                     alt={img.title} 
@@ -136,6 +141,45 @@ export default function GalleryPage({ params }: { params: Promise<{ locale: stri
       </section>
 
       <Footer dict={dict.footer} navDict={dict.nav} locale={locale as Locale} />
+
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100000] flex items-center justify-center bg-black/90 p-4 sm:p-8 backdrop-blur-sm"
+            onClick={() => setSelectedImage(null)}
+          >
+            <button 
+              className="absolute top-6 right-6 text-white hover:text-cta transition-colors p-2 bg-black/50 rounded-full"
+              onClick={() => setSelectedImage(null)}
+            >
+              <X className="w-8 h-8" />
+            </button>
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              className="relative w-full h-full max-w-6xl max-h-[90vh] flex flex-col items-center justify-center gap-4"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="relative w-full h-full bg-transparent rounded-lg overflow-hidden flex items-center justify-center">
+                <Image 
+                  src={selectedImage.src}
+                  alt={selectedImage.title}
+                  fill
+                  className="object-contain"
+                  sizes="100vw"
+                  priority
+                />
+              </div>
+              <p className="text-white text-xl font-medium text-center">{selectedImage.title}</p>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </main>
   );
 }

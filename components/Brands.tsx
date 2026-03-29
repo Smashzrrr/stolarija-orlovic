@@ -12,7 +12,7 @@ const brandDomains: Record<string, string> = {
   'Rehau': '/images/brands/REHAU_Logo_sRGB_01.svg.png',
   'Feal': '/images/brands/Feal-logo.png',
   'Eux': '/images/brands/eux-sistemi-za-grilje-logo.svg',
-  'Schüco': '/images/brands/sc3721sd9d-schuco-logo-schuco-facades-premier-conference-on-high-performance-building.png',
+  'Schüco': '/images/brands/Schuco-Logo.png',
   'Ideco': '/images/brands/ideco.png',
 };
 

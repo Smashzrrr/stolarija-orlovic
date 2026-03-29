@@ -37,6 +37,7 @@ export default function Footer({ dict, navDict, locale }: FooterProps) {
             {dict.working_hours && (
               <p className="text-xs text-muted">{dict.working_hours}</p>
             )}
+            <p className="text-xs text-muted mt-2">Dizajn i izrada: <a href="https://fraviz.com" target="_blank" className="font-semibold hover:text-cta transition-colors">FRAVIZ</a></p>
           </div>
 
           {/* Nav links */}
@@ -62,7 +63,7 @@ export default function Footer({ dict, navDict, locale }: FooterProps) {
               <Mail className="w-4 h-4" />
             </a>
             <a
-              href="tel:+38523681232"
+              href="tel:+385957773505"
               className="w-9 h-9 rounded-lg border border-border flex items-center justify-center text-muted hover:text-cta hover:border-cta/30 transition-colors"
               aria-label="Phone"
             >

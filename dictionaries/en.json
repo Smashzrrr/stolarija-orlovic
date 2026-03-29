@@ -55,31 +55,31 @@
     "items": [
       {
         "title": "PVC Joinery",
-        "description": "Premium energy efficiency for your home: Windows, solid entrance doors, balcony doors, lift-and-slide walls and sliding systems with 2-4 tracks.",
+        "description": "Premium energy efficiency for your home: Windows, solid entrance doors, balcony doors, lift-and-slide walls and sliding systems.",
         "cta": "Learn more →",
         "slug": "pvc-stolarija",
-        "image": "/images/products/pvc/pvc-1.jpg"
+        "image": "/images/products/prozori/prozori-4.jpeg"
       },
       {
         "title": "ALU Joinery",
         "description": "Modern and durable solutions: Entrance doors with hidden leaf, aluminium walls and ALU folding shutters.",
         "cta": "Learn more →",
         "slug": "alu-stolarija",
-        "image": "/images/products/alu/alu-1.jpg"
+        "image": "/images/products/alu/alu-2.jpg"
       },
       {
         "title": "Mosquito Nets",
-        "description": "Long-lasting insect protection: Plisse sliding, roller pull and classic American mosquito nets.",
+        "description": "Long-lasting insect protection: Plisse sliding, roller pull and classic mosquito nets.",
         "cta": "Learn more →",
         "slug": "komarnici",
-        "image": "/images/products/komarnici/komarnici-1.jpg"
+        "image": "/images/products/komarnici/komarnici-5.jpg"
       },
       {
         "title": "ALU Fences",
         "description": "Aesthetically pleasing and extremely durable aluminium fences for yards, balconies and staircases.",
         "cta": "Learn more →",
         "slug": "alu-ograde",
-        "image": "/images/products/ograde/ograde-1.jpg"
+        "image": "/images/products/ograde/ograde-5.jpeg"
       }
     ]
   },

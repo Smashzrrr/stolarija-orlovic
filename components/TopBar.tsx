@@ -18,10 +18,6 @@ export default function TopBar() {
 
       {/* Right side: Contact */}
       <div className="flex items-center gap-6">
-        <a href="tel:+38523681232" className="flex items-center gap-2 hover:text-black transition-colors">
-          <Phone fill="white" className="w-3.5 h-3.5 text-[#84CC16]" />
-          <span>023 681 232</span>
-        </a>
         <a href="tel:+385957773505" className="flex items-center gap-2 hover:text-black transition-colors">
           <Phone fill="white" className="w-3.5 h-3.5 text-[#84CC16]" />
           <span>095 777 3505</span>

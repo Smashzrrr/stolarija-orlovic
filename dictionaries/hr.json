@@ -54,32 +54,32 @@
     "subtitle": "Potpuna ponuda PVC i ALU stolarije za svaki prostor.",
     "items": [
       {
-        "title": "PVC Stolarija",
+        "title": "PVC stolarija",
         "description": "Vrhunska energetska učinkovitost za vaš dom: Prozori, masivna ulazna vrata, balkonska vrata, podizno-klizne stijene i klizni sistemi s 2-4 staze.",
         "cta": "Saznaj više →",
         "slug": "pvc-stolarija",
-        "image": "/images/products/pvc/pvc-1.jpg"
+        "image": "/images/products/prozori/prozori-4.jpeg"
       },
       {
-        "title": "ALU Stolarija",
+        "title": "ALU stolarija",
         "description": "Moderna i trajna rješenja: Ulazna vrata sa skrivenim krilom, aluminijske stijene te ALU i harmo grilje.",
         "cta": "Saznaj više →",
         "slug": "alu-stolarija",
-        "image": "/images/products/alu/alu-1.jpg"
+        "image": "/images/products/alu/alu-2.jpg"
       },
       {
         "title": "Komarnici",
         "description": "Dugotrajna zaštita od insekata: Plise klizni, rolo potezni i klasični američki komarnici na otvaranje.",
         "cta": "Saznaj više →",
         "slug": "komarnici",
-        "image": "/images/products/komarnici/komarnici-1.jpg"
+        "image": "/images/products/komarnici/komarnici-5.jpg"
       },
       {
-        "title": "ALU Ograde",
+        "title": "ALU ograde",
         "description": "Estetski privlačne i izuzetno otporne aluminijske ograde za dvorišta, balkone i stubišta.",
         "cta": "Saznaj više →",
         "slug": "alu-ograde",
-        "image": "/images/products/ograde/ograde-1.jpg"
+        "image": "/images/products/ograde/ograde-5.jpeg"
       }
     ]
   },
