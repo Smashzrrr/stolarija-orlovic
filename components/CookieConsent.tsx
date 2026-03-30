@@ -8,7 +8,7 @@ export default function CookieConsent() {
 
   useEffect(() => {
     // Provjeri je li korisnik već pristao/odbio
-    const consent = localStorage.getItem('fraviz-cookie-consent');
+    const consent = localStorage.getItem('orlovic-cookie-consent');
     if (!consent) {
       // Optimizacija prikaza: pričekaj malo da se stranica učita
       const timer = setTimeout(() => setShow(true), 1500);
@@ -17,12 +17,12 @@ export default function CookieConsent() {
   }, []);
 
   const handleAccept = () => {
-    localStorage.setItem('fraviz-cookie-consent', 'accepted');
+    localStorage.setItem('orlovic-cookie-consent', 'accepted');
     setShow(false);
   };
 
   const handleDecline = () => {
-    localStorage.setItem('fraviz-cookie-consent', 'declined');
+    localStorage.setItem('orlovic-cookie-consent', 'declined');
     setShow(false);
   };
 
