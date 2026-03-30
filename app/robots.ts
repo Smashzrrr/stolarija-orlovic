@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://stolarija-orlovic.hr/sitemap.xml',
+    sitemap: 'https://alupvcorlovic.com/sitemap.xml',
   };
 }
