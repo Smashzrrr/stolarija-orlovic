@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://alupvcorlovic.com/sitemap.xml',
+    sitemap: 'https://www.alupvcorlovic.com/sitemap.xml',
   };
 }

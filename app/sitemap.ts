@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://alupvcorlovic.com';
+  const baseUrl = 'https://www.alupvcorlovic.com';
   const locales = ['hr', 'en'];
 
   const entries: MetadataRoute.Sitemap = [];
