@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import CookieConsent from "@/components/CookieConsent";
 import { getDictionary, type Locale, locales } from "@/lib/i18n";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -108,6 +109,7 @@ export default async function LocaleLayout({
         <WhatsAppButton message={dict.footer.whatsapp_btn} />
         <CookieConsent />
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
