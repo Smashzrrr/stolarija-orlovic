@@ -15,9 +15,9 @@
     "subtitle": "Energetski učinkoviti prozori, vrata i klizne stijene — Brza montaža — 10 godina garancije.",
     "cta_primary": "Zatraži ponudu",
     "cta_secondary": "Besplatna izmjera",
-    "stat1_value": "500+",
+    "stat1_value": "1000+",
     "stat1_label": "završenih projekata",
-    "stat2_value": "15+",
+    "stat2_value": "25+",
     "stat2_label": "godina iskustva",
     "stat3_value": "10",
     "stat3_label": "godina garancije"
@@ -212,6 +212,22 @@
         "image": "/images/projects/projekt-16.jpeg"
       }
     ]
+  },
+  "about": {
+    "badge": "O NAMA",
+    "title": "Tko smo mi?",
+    "headline": "Obiteljska tvrtka s tradicijom od 2000. godine",
+    "p1": "ALU i PVC Orlović jedni smo od vodećih stolarara u Dalmaciji. Od 2000. godine opskrbljujemo domove i poslovne objekte po cijeloj Hrvatskoj vrhunskim prozorima, vratima i kliznim stijenama. Svaki projekt tretiramo kao naš vlastiti — od prvog kontakta do završne montaže.",
+    "p2": "S više od 1000 uspješno završenih projekata i timom od više od 10 stručnih djelatnika, svakodnevno dokazujemo što znači raditi s najboljim europskim materijalima i bez kompromisa po pitanju kvalitete.",
+    "stat1_value": "2000.",
+    "stat1_label": "godina osnutka",
+    "stat2_value": "1000+",
+    "stat2_label": "završenih projekata",
+    "stat3_value": "10+",
+    "stat3_label": "stručnih djelatnika",
+    "stat4_value": "#1",
+    "stat4_label": "u Dalmaciji",
+    "brands_label": "Radimo s brendovima"
   },
   "brands": {
     "title": "Radimo s najboljima",

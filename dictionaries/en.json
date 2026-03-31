@@ -15,9 +15,9 @@
     "subtitle": "Energy-efficient windows, doors and sliding walls — Fast installation — 10-year warranty.",
     "cta_primary": "Get a Quote",
     "cta_secondary": "Free Measurement",
-    "stat1_value": "500+",
+    "stat1_value": "1000+",
     "stat1_label": "completed projects",
-    "stat2_value": "15+",
+    "stat2_value": "25+",
     "stat2_label": "years of experience",
     "stat3_value": "10",
     "stat3_label": "years warranty",
@@ -226,6 +226,22 @@
         "image": "/images/projects/projekt-16.jpeg"
       }
     ]
+  },
+  "about": {
+    "badge": "ABOUT US",
+    "title": "Who We Are",
+    "headline": "A family business with a tradition since 2000",
+    "p1": "ALU and PVC Orlović are one of the leading joinery companies in Dalmatia. Since 2000, we have been supplying homes and commercial buildings across Croatia with premium windows, doors, and sliding walls. We treat every project as our own — from the first contact to the final installation.",
+    "p2": "With over 1,000 successfully completed projects and a team of more than 10 skilled professionals, we prove every day what it means to work with the best European materials and without any compromise on quality.",
+    "stat1_value": "2000",
+    "stat1_label": "founded",
+    "stat2_value": "1000+",
+    "stat2_label": "completed projects",
+    "stat3_value": "10+",
+    "stat3_label": "skilled employees",
+    "stat4_value": "#1",
+    "stat4_label": "in Dalmatia",
+    "brands_label": "We work with"
   },
   "brands": {
     "title": "We Work With the Best",

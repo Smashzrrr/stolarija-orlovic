@@ -161,28 +161,34 @@ export default function GalleryClient({ locale, dict }: { locale: Locale, dict: 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100000] flex items-center justify-center bg-black/90 p-4 sm:p-8 backdrop-blur-sm"
+            // We use top-[98px] lg:top-[120px] so the modal starts strictly below the Navbar
+            className="fixed left-0 right-0 bottom-0 top-[98px] lg:top-[120px] z-[100000] flex items-center justify-center bg-black/95 p-4 sm:p-8 backdrop-blur-sm"
             onClick={() => setSelectedIndex(null)}
           >
+            {/* Close button — highest z-index, always visible */}
             <button 
-              className="absolute top-6 right-6 text-white hover:text-cta transition-colors p-2 bg-black/50 rounded-full z-50"
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 text-white hover:text-cta transition-colors p-2.5 bg-black/60 hover:bg-black/80 rounded-full z-[60] shadow-lg"
               onClick={() => setSelectedIndex(null)}
+              aria-label="Zatvori"
             >
-              <X className="w-8 h-8" />
+              <X className="w-6 h-6 sm:w-8 sm:h-8" />
             </button>
             
+            {/* Nav arrows — lower z-index and kept away from top corners */}
             <button 
-              className="absolute left-4 sm:left-10 top-1/2 -translate-y-1/2 text-white hover:text-cta transition-colors p-3 bg-black/30 hover:bg-black/60 rounded-full z-50 group"
+              className="absolute left-2 sm:left-10 top-1/2 -translate-y-1/2 text-white hover:text-cta transition-colors p-3 bg-black/30 hover:bg-black/60 rounded-full z-50 group"
               onClick={prevImage}
+              aria-label="Prethodna slika"
             >
-              <ChevronLeft className="w-8 h-8 sm:w-10 sm:h-10 group-hover:-translate-x-1 transition-transform" />
+              <ChevronLeft className="w-7 h-7 sm:w-10 sm:h-10 group-hover:-translate-x-1 transition-transform" />
             </button>
 
             <button 
-              className="absolute right-4 sm:right-10 top-1/2 -translate-y-1/2 text-white hover:text-cta transition-colors p-3 bg-black/30 hover:bg-black/60 rounded-full z-50 group"
+              className="absolute right-2 sm:right-10 top-1/2 -translate-y-1/2 text-white hover:text-cta transition-colors p-3 bg-black/30 hover:bg-black/60 rounded-full z-50 group"
               onClick={nextImage}
+              aria-label="Sljedeća slika"
             >
-              <ChevronRight className="w-8 h-8 sm:w-10 sm:h-10 group-hover:translate-x-1 transition-transform" />
+              <ChevronRight className="w-7 h-7 sm:w-10 sm:h-10 group-hover:translate-x-1 transition-transform" />
             </button>
 
             <motion.div
@@ -191,7 +197,7 @@ export default function GalleryClient({ locale, dict }: { locale: Locale, dict: 
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-              className="relative w-full h-full max-w-6xl max-h-[90vh] flex flex-col items-center justify-center gap-4"
+              className="relative w-full h-full max-w-6xl max-h-full flex flex-col items-center justify-center gap-4"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="relative w-full h-full bg-transparent rounded-lg overflow-hidden flex items-center justify-center">

@@ -1,20 +1,20 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Zap, FileText, Globe, Coins } from 'lucide-react';
+import { CalendarCheck, Briefcase, Users, Award } from 'lucide-react';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 interface AboutProps {
   dict: any;
 }
 
-const tools = ['Claude Code', 'Claude', 'Antigravity', 'Manus', 'Apify', 'Next.js'];
+const brands = ['Rehau', 'Schüco', 'Feal', 'Ideco', 'Eux'];
 
 const statIcons = [
-  { icon: Zap, color: 'text-cta' },
-  { icon: FileText, color: 'text-cta' },
-  { icon: Globe, color: 'text-cta' },
-  { icon: Coins, color: 'text-cta' },
+  { icon: CalendarCheck, color: 'text-cta' },
+  { icon: Briefcase,     color: 'text-cta' },
+  { icon: Users,         color: 'text-cta' },
+  { icon: Award,         color: 'text-cta' },
 ];
 
 export default function About({ dict }: AboutProps) {
@@ -35,6 +35,9 @@ export default function About({ dict }: AboutProps) {
           transition={{ duration: 0.6 }}
           className="text-center mb-10"
         >
+          <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider bg-cta/10 text-cta border border-cta/20 uppercase mb-4 shadow-sm">
+            {dict.badge}
+          </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-[family-name:var(--font-poppins)]">
             {dict.title}
           </h2>
@@ -55,18 +58,18 @@ export default function About({ dict }: AboutProps) {
             <p className="text-muted leading-relaxed mb-4">{dict.p1}</p>
             <p className="text-muted leading-relaxed mb-8">{dict.p2}</p>
 
-            {/* Tools badges */}
+            {/* Material brand badges */}
             <div className="flex items-center gap-3 flex-wrap">
               <span className="text-xs text-muted-dark flex items-center gap-2">
                 <span className="w-8 h-px bg-border" />
-                {dict.tools_label}
+                {dict.brands_label}
               </span>
-              {tools.map((tool) => (
+              {brands.map((brand) => (
                 <span
-                  key={tool}
+                  key={brand}
                   className="px-3 py-1.5 text-xs font-medium rounded-full border border-border bg-surface/40 text-muted hover:text-foreground hover:border-cta/30 transition-colors"
                 >
-                  {tool}
+                  {brand}
                 </span>
               ))}
             </div>

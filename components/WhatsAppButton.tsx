@@ -6,18 +6,58 @@ import { X } from 'lucide-react';
 
 const WHATSAPP_NUMBER = '385957773505';
 const DEFAULT_MESSAGE = 'Pozdrav! Zanima me ponuda za PVC/ALU stolariju. Možete li mi poslati više informacija?';
+const COOKIE_KEY = 'orlovic-cookie-consent';
 
 export default function WhatsAppButton({ message }: { message?: string }) {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
   const [dismissed, setDismissed] = useState(false);
 
-  // Show tooltip after 5 seconds
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowTooltip(true);
-    }, 5000);
-    return () => clearTimeout(timer);
+    // Show only after cookie consent is resolved (accepted or declined)
+    // Add a longer delay so it doesn't pop up immediately and annoy the user
+    const checkAndShow = () => {
+      const consent = localStorage.getItem(COOKIE_KEY);
+      if (consent) {
+        // Cookie already decided in a previous session — show after 3 second delay
+        const t = setTimeout(() => {
+          setIsVisible(true);
+          // Show tooltip 5s after button appears
+          setTimeout(() => setShowTooltip(true), 5000);
+        }, 3000);
+        return () => clearTimeout(t);
+      } else {
+        // Cookie not yet decided — wait for storage event (user clicks accept/decline)
+        const onStorage = (e: StorageEvent) => {
+          if (e.key === COOKIE_KEY && e.newValue) {
+            setTimeout(() => {
+              setIsVisible(true);
+              setTimeout(() => setShowTooltip(true), 5000);
+            }, 1000);
+          }
+        };
+        window.addEventListener('storage', onStorage);
+
+        // Also poll every 500ms as fallback (storage events sometimes behave inconsistently in the same tab)
+        const poll = setInterval(() => {
+          if (localStorage.getItem(COOKIE_KEY)) {
+            clearInterval(poll);
+            setTimeout(() => {
+              setIsVisible(true);
+              setTimeout(() => setShowTooltip(true), 5000);
+            }, 1000);
+          }
+        }, 500);
+
+        return () => {
+          window.removeEventListener('storage', onStorage);
+          clearInterval(poll);
+        };
+      }
+    };
+
+    const cleanup = checkAndShow();
+    return cleanup;
   }, []);
 
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(DEFAULT_MESSAGE)}`;
@@ -25,7 +65,7 @@ export default function WhatsAppButton({ message }: { message?: string }) {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[9999] flex items-end gap-3">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[9990] flex items-end gap-3">
       {/* Tooltip bubble */}
       <AnimatePresence>
         {showTooltip && !dismissed && (
@@ -34,21 +74,21 @@ export default function WhatsAppButton({ message }: { message?: string }) {
             animate={{ opacity: 1, x: 0, scale: 1 }}
             exit={{ opacity: 0, x: 20, scale: 0.8 }}
             transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-            className="relative bg-white rounded-2xl shadow-2xl border border-gray-100 p-4 max-w-[240px] mb-2"
+            className="relative bg-white rounded-2xl shadow-xl border border-gray-100 p-3 sm:p-4 max-w-[200px] mb-1 sm:mb-2"
           >
             <button
               onClick={(e) => {
                 e.stopPropagation();
                 setDismissed(true);
               }}
-              className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"
+              className="absolute -top-2 -right-2 w-7 h-7 sm:w-6 sm:h-6 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors shadow-sm"
               aria-label="Zatvori"
             >
-              <X className="w-3 h-3 text-gray-500" />
+              <X className="w-4 h-4 text-gray-600" />
             </button>
-            <p className="text-sm text-gray-700 font-medium leading-snug">
+            <p className="text-xs sm:text-sm text-gray-700 font-medium leading-snug">
               {message || (
-                <>👋 Trebate ponudu? Pišite nam na <span className="text-[#25D366] font-bold">WhatsApp</span> — odgovaramo brzo!</>
+                <>👋 Trebate ponudu? Pišite nam na <span className="text-[#25D366] font-bold">WhatsApp</span>!</>
               )}
             </p>
             {/* Arrow pointing to the button */}
@@ -59,15 +99,16 @@ export default function WhatsAppButton({ message }: { message?: string }) {
 
       {/* WhatsApp FAB Container */}
       <div className="relative">
+        {/* Enlarge dismiss X button so it's easier to tap */}
         <button
           onClick={(e) => {
             e.stopPropagation();
             setIsVisible(false);
           }}
-          className="absolute -top-1 -left-1 w-5 h-5 bg-white/90 text-gray-600 border border-gray-200 rounded-full flex items-center justify-center hover:bg-gray-100 z-50 shadow-sm"
+          className="absolute -top-3 -left-3 w-8 h-8 bg-white text-gray-800 border-2 border-gray-200 rounded-full flex items-center justify-center hover:bg-gray-100 z-50 shadow-md"
           aria-label="Ukloni WhatsApp gumb"
         >
-          <X className="w-3 h-3" />
+          <X className="w-4 h-4" />
         </button>
 
         <motion.a
@@ -77,17 +118,17 @@ export default function WhatsAppButton({ message }: { message?: string }) {
           aria-label="Kontaktirajte nas na WhatsApp"
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 1.5, type: 'spring', stiffness: 260, damping: 20 }}
+          transition={{ type: 'spring', stiffness: 260, damping: 20 }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          className="relative w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20BD5A] shadow-lg shadow-[#25D366]/30 flex items-center justify-center transition-colors"
+          className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] hover:bg-[#20BD5A] shadow-lg shadow-[#25D366]/30 flex items-center justify-center transition-colors"
         >
           {/* Pulse ring */}
           <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-20" />
-          
+
           {/* WhatsApp icon */}
           <svg
-            className="w-7 h-7 text-white relative z-10"
+            className="w-6 h-6 sm:w-7 sm:h-7 text-white relative z-10"
             fill="currentColor"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"

@@ -150,6 +150,15 @@ export default function References({ dict }: ReferencesProps) {
               transition={{ duration: 0.4, type: "spring", bounce: 0.3 }}
               className="relative w-full max-w-4xl bg-background rounded-3xl overflow-hidden shadow-2xl border border-border/50 flex flex-col md:flex-row max-h-[90vh]"
             >
+              {/* Close button — always visible, top-right of modal */}
+              <button 
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/80 hover:bg-white border border-border/40 flex items-center justify-center text-foreground hover:text-foreground transition-colors z-20 shadow-md"
+                aria-label="Zatvori"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
               {/* Image Side */}
               <div className="relative w-full md:w-1/2 h-64 md:h-auto min-h-[300px]">
                 {selectedProject.image ? (
@@ -173,14 +182,7 @@ export default function References({ dict }: ReferencesProps) {
 
               {/* Text Side */}
               <div className="p-8 sm:p-12 w-full md:w-1/2 flex flex-col justify-center bg-surface/10 overflow-y-auto">
-                <button 
-                  onClick={() => setSelectedProject(null)}
-                  className="absolute top-4 right-4 w-10 h-10 rounded-full bg-surface/50 hover:bg-surface border border-border flex items-center justify-center text-muted hover:text-foreground transition-colors z-10"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-
-                <h3 className="text-2xl sm:text-3xl font-bold font-[family-name:var(--font-poppins)] text-foreground mb-4 pr-8">
+                <h3 className="text-2xl sm:text-3xl font-bold font-[family-name:var(--font-poppins)] text-foreground mb-4 pr-12">
                   {selectedProject.title}
                 </h3>
                 <p className="text-base text-muted leading-relaxed mb-8">
